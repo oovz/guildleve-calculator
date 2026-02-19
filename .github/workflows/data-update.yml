@@ -1,0 +1,50 @@
+
+name: Weekly Data Update
+
+on:
+  schedule:
+    # Run at 00:00 on Tuesday (Patch day usually)
+    - cron: '0 0 * * 2'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+          
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Fetch Game Data
+        run: pnpm run build:data
+        env:
+          CI: true
+          
+      - name: Check for changes
+        id: git-check
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add public/data/*.json
+          git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
+          
+      - name: Commit and Push
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git commit -m "chore(data): weekly game data update"
+          git push

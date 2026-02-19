@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0;URL='/'">
+    <script>
+        // Redirect to root, preserving query parameters
+        var l = window.location;
+        var query = l.search;
+        window.location.href = '/' + query;
+    </script>
+</head>
+<body>
+</body>
+</html>

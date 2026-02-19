@@ -1,0 +1,21 @@
+{
+    "HomePage": {
+        "title": "FFXIV Leve Calculator",
+        "selectDc": "Select Data Center",
+        "profitMode": "Profit Mode",
+        "levelingMode": "Leveling Mode"
+    },
+    "Common": {
+        "refresh": "Refresh",
+        "lastUpdated": "Last updated: {time}",
+        "stale": "Stale data",
+        "hq": "HQ",
+        "nq": "NQ",
+        "loading": "Loading...",
+        "language": "Language"
+    },
+    "Header": {
+        "title": "Leve Calculator",
+        "back": "Back"
+    }
+}

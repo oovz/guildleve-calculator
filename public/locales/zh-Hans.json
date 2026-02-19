@@ -1,0 +1,21 @@
+{
+    "HomePage": {
+        "title": "FFXIV理符计算器",
+        "selectDc": "选择数据中心",
+        "profitMode": "利润模式",
+        "levelingMode": "升级模式"
+    },
+    "Common": {
+        "refresh": "刷新",
+        "lastUpdated": "最后更新：{time}",
+        "stale": "数据过期",
+        "hq": "HQ",
+        "nq": "NQ",
+        "loading": "加载中...",
+        "language": "语言"
+    },
+    "Header": {
+        "title": "理符计算器",
+        "back": "返回"
+    }
+}

@@ -106,3 +106,8 @@ dist
 
 # Caddy
 Caddyfile
+
+# nextjs
+out
+
+legacy
