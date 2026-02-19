@@ -7,8 +7,8 @@ import { RankedLeveResult } from '@/types/calculation';
 interface SidebarProps {
     bestResult: RankedLeveResult | null;
     isLoading?: boolean;
-    localOverrides?: Record<number, { price: number; source: 'market' | 'npc' | 'manual' }>;
-    setLocalOverride?: (itemId: number, price: number, source: 'market' | 'npc' | 'manual') => void;
+    localOverrides?: Record<number, { price: number; source: 'market' | 'npc' | 'manual' | 'craft' }>;
+    setLocalOverride?: (itemId: number, price: number, source: 'market' | 'npc' | 'manual' | 'craft') => void;
 }
 
 export function Sidebar({ bestResult, isLoading = false, localOverrides = {}, setLocalOverride }: SidebarProps) {

@@ -34,7 +34,7 @@ export default function HomePage() {
 
     // Selected leve ID 
     const [selectedLeveId, setSelectedLeveId] = useState<number | null>(null);
-    const [localOverrides, setLocalOverrides] = useState<Record<number, { price: number; source: 'market' | 'npc' | 'manual' }>>({});
+    const [localOverrides, setLocalOverrides] = useState<Record<number, { price: number; source: 'market' | 'npc' | 'manual' | 'craft' }>>({});
 
     // 1. Rank and Calculate
     const rankedResults = useMemo(() => {
@@ -304,7 +304,7 @@ export default function HomePage() {
                                     bestResult={focusItemWithLocalOverrides}
                                     isLoading={marketLoading}
                                     localOverrides={localOverrides}
-                                    setLocalOverride={(itemId: number, price: number, source: 'market' | 'npc' | 'manual') => {
+                                    setLocalOverride={(itemId: number, price: number, source: 'market' | 'npc' | 'manual' | 'craft') => {
                                         setLocalOverrides(prev => {
                                             const existing = prev[itemId];
                                             if (existing && existing.price === price && existing.source === source) {

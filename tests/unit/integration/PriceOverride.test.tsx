@@ -44,6 +44,8 @@ const mockCalculation: LeveCalculation = {
         isStale: false,
         isOutlier: false,
         isLowSupply: false,
+        isLowVolume: false,
+        recommendedPrice: 800,
         warnings: []
     },
     totalXPNQ: 1000,
