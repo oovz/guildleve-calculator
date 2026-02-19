@@ -37,13 +37,7 @@ interface SettingsPanelProps {
     customTrigger?: React.ReactNode;
 }
 
-const REGION_MAPPING: Record<string, string> = {
-    'North America': 'regionNA',
-    'Europe': 'regionEU',
-    'Japan': 'regionJP',
-    'Oceania': 'regionOC',
-    'China': 'regionCN'
-};
+// REGION_MAPPING removed
 
 export function SettingsPanel({ customTrigger }: SettingsPanelProps) {
     const { preferences, updatePreferences } = useSettings();
@@ -241,7 +235,7 @@ export function SettingsPanel({ customTrigger }: SettingsPanelProps) {
                                 <Label className="text-[10px] font-black text-muted-foreground uppercase tracking-widest">{t('marketProfile')}</Label>
                                 <Select
                                     value={preferences.marketProfile || 'balanced'}
-                                    onValueChange={(val) => handleProfileChange(val as any)}
+                                    onValueChange={(val) => handleProfileChange(val as 'edge' | 'balanced' | 'strict')}
                                 >
                                     <SelectTrigger className="h-10 rounded-sm bg-background border-border font-bold text-sm">
                                         <SelectValue />

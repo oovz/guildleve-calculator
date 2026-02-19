@@ -10,7 +10,6 @@ import { History, RefreshCw, Settings, TrendingUp, DollarSign, ChevronDown } fro
 import {
     DropdownMenu,
     DropdownMenuContent,
-    DropdownMenuItem,
     DropdownMenuTrigger,
     DropdownMenuCheckboxItem,
     DropdownMenuSeparator,

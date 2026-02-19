@@ -56,9 +56,6 @@ export function LeveDetailsCard({ result, isLoading = false }: LeveDetailsCardPr
     const craftCost = craftingBreakdown?.craftingCost ?? null;
     const buyCost = craftingBreakdown?.directPurchaseCost ?? null;
 
-    const profitCraft = craftCost !== null ? revenueValue - craftCost + (calculation.bonusExpectedValue || 0) : null;
-    const profitBuy = buyCost !== null ? revenueValue - buyCost + (calculation.bonusExpectedValue || 0) : null;
-
     return (
         <div className="bg-card rounded border border-border p-4 text-foreground shadow-none flex flex-col relative overflow-hidden h-auto" id="selected-leve-overview">
             <div className="flex flex-col gap-0.5 mb-4 shrink-0 border-b border-border/50 pb-3">
