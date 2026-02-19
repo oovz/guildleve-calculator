@@ -47,11 +47,10 @@ export function LeveDetailsCard({ result, isLoading = false }: LeveDetailsCardPr
     }
 
     const { calculation, jobId, craftingBreakdown } = result;
-    const { leve, item, optimalProfit, revenueNQ, revenueHQ } = calculation;
+    const { leve, item, optimalProfit } = calculation;
 
     const profit = optimalProfit ?? 0;
     const jobName = JOBS[jobId]?.name ? getL(JOBS[jobId].name) : jobId;
-    const revenueValue = calculation.optimalQuality === 'HQ' ? revenueHQ : revenueNQ;
 
     const craftCost = craftingBreakdown?.craftingCost ?? null;
     const buyCost = craftingBreakdown?.directPurchaseCost ?? null;
