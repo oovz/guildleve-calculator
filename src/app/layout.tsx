@@ -22,11 +22,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://oovz.github.io/guildleve-calculator/'),
   title: "Guildleve Calculator - FFXIV Profit & Leveling",
-  manifest: 'manifest.webmanifest',
   description: "Optimize your FFXIV Grand Company Leves for maximum Gil profit and XP efficiency. Supported for Global and CN servers.",
   keywords: ["FFXIV", "Leve", "Calculator", "Profit", "Leveling", "Crafter", "DoH", "Gil", "XP"],
   authors: [{ name: "OOVZ Team" }],
