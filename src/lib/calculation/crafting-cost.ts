@@ -194,11 +194,12 @@ export function calculateCraftingCost(
     if (craftingCost !== null && bestBuy !== Infinity) {
         if (craftingCost < bestBuy) {
             savings = bestBuy - craftingCost;
-            savingsPercent = (savings / bestBuy) * 100;
+            savingsPercent = bestBuy > 0 ? (savings / bestBuy) * 100 : 0;
             savingsLabel = `Craft saves ${Math.round(savingsPercent)}%`;
         } else {
             savings = craftingCost - bestBuy;
-            savingsLabel = `Buy saves ${Math.round((savings / craftingCost) * 100)}%`;
+            savingsPercent = craftingCost > 0 ? (savings / craftingCost) * 100 : 0;
+            savingsLabel = `Buy saves ${Math.round(savingsPercent)}%`;
         }
     } else if (craftingCost !== null) {
         savingsLabel = "Craft only";
