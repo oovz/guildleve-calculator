@@ -21,8 +21,11 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export const metadata: Metadata = {
   title: "Guildleve Calculator - FFXIV Profit & Leveling",
+  manifest: `${BASE_PATH}/manifest.webmanifest`,
   description: "Optimize your FFXIV Grand Company Leves for maximum Gil profit and XP efficiency. Supported for Global and CN servers.",
   keywords: ["FFXIV", "Leve", "Calculator", "Profit", "Leveling", "Crafter", "DoH", "Gil", "XP"],
   authors: [{ name: "OOVZ Team" }],

@@ -89,6 +89,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

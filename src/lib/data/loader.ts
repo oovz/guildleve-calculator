@@ -3,7 +3,8 @@ import { Item } from '@/types/item';
 import { Recipe } from '@/types/recipe';
 // import { JOB_ID_MAPPING } from '@/types/job';
 
-const DATA_BASE = '/data';
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const DATA_BASE = `${BASE_PATH}/data`;
 
 async function fetchStaticJson<T>(filename: string): Promise<T> {
     const res = await fetch(`${DATA_BASE}/${filename}`);

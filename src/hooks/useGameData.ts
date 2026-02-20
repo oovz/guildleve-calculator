@@ -17,19 +17,21 @@ export interface GameData {
     error: unknown;
 }
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export function useGameData(): GameData {
-    const { data: leves, error: leveError, isLoading: leveLoading } = useSWR<Record<string, Leve>>('/data/leves.json', fetcher, {
+    const { data: leves, error: leveError, isLoading: leveLoading } = useSWR<Record<string, Leve>>(`${BASE_PATH}/data/leves.json`, fetcher, {
         revalidateOnFocus: false,
         revalidateIfStale: false,
     });
 
-    const { data: items, error: itemError, isLoading: itemLoading } = useSWR<Record<string, Item>>('/data/items.json', fetcher, {
+    const { data: items, error: itemError, isLoading: itemLoading } = useSWR<Record<string, Item>>(`${BASE_PATH}/data/items.json`, fetcher, {
         revalidateOnFocus: false,
         revalidateIfStale: false,
     });
 
     // Raw recipes keyed by recipeId
-    const { data: rawRecipes, error: recipeError, isLoading: recipeLoading } = useSWR<Record<string, Recipe>>('/data/recipes.json', fetcher, {
+    const { data: rawRecipes, error: recipeError, isLoading: recipeLoading } = useSWR<Record<string, Recipe>>(`${BASE_PATH}/data/recipes.json`, fetcher, {
         revalidateOnFocus: false,
         revalidateIfStale: false,
     });

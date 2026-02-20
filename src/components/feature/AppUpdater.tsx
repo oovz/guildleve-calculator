@@ -5,7 +5,8 @@ import { useEffect } from 'react';
 import { StorageService } from '@/lib/storage';
 import { toast } from 'sonner';
 
-const VERSION_File = '/version.json';
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const VERSION_File = `${BASE_PATH}/version.json`;
 const STORAGE_KEY = 'app-version';
 
 export function AppUpdater() {
