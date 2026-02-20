@@ -37,7 +37,7 @@ describe('UniversalisClient', () => {
         expect(result[0].medianPriceNQ).toBe(110);
     });
 
-    it('handles batch requests in chunks of 100', async () => {
+    it('handles batch requests in chunks of 50', async () => {
         const itemIds = Array.from({ length: 150 }, (_, i) => i + 1);
 
         // Mock for both chunks
@@ -54,7 +54,7 @@ describe('UniversalisClient', () => {
         const result = await UniversalisClient.getMarketData('Mana', itemIds);
 
         expect(result.length).toBe(150);
-        expect(fetch).toHaveBeenCalledTimes(2); // 100 + 50
+        expect(fetch).toHaveBeenCalledTimes(3); // 50 + 50 + 50
     });
 
     it('retries on 429 rate limit', async () => {
