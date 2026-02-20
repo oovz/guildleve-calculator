@@ -74,10 +74,10 @@ export class UniversalisClient {
 
         logger.debug(`[Universalis] Fetching ${validItemIds.length} items for ${dc}`);
 
-        // Chunk items into batches of 100
+        // Chunk items into batches of 50 (reduced from 100 to avoid timeouts/CORS issues)
         const chunks: number[][] = [];
-        for (let i = 0; i < validItemIds.length; i += 100) {
-            chunks.push(validItemIds.slice(i, i + 100));
+        for (let i = 0; i < validItemIds.length; i += 50) {
+            chunks.push(validItemIds.slice(i, i + 50));
         }
 
         const results: MarketListing[] = [];
